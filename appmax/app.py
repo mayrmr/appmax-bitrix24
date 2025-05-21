@@ -100,7 +100,7 @@ def receber_webhook():
 
     try:
         info = dados.get("data", {})
-        cliente = info.get("customer", {})  # aqui restauramos
+        cliente = info.get("customer", {})
         produto = info.get("bundles", [{}])[0].get("name", "Produto não informado")
 
         print("🧾 CHAVES DO CLIENTE:", list(cliente.keys()))
