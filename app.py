@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return "🟢 AppMax-Bitrix24 Webhook ativo!"
 
-BITRIX_WEBHOOK_URL = "https://radar.bitrix24.com.br/rest/45/ga1g58b6g5n26kd0/"
+BITRIX_WEBHOOK_URL = "https://SEU_DOMINIO.bitrix24.com.br/rest/USUARIO_ID/SEU_TOKEN/"
 
 CAMPOS_PERSONALIZADOS = {
     "telefone": "UF_CRM_1741981238931",
@@ -100,7 +100,7 @@ def receber_webhook():
 
     try:
         info = dados.get("data", {})
-        cliente = info.get("customer", {})  # aqui restauramos
+        cliente = info.get("customer", {})
         produto = info.get("bundles", [{}])[0].get("name", "Produto não informado")
 
         print("🧾 CHAVES DO CLIENTE:", list(cliente.keys()))
